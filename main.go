@@ -55,7 +55,10 @@ func (s *service) FindAvailable(ctx context.Context, req *pb.Specification) (*pb
 }
 
 func main() {
-	repo := &VesselRepository{}
+	vessels := []*pb.Vessel{
+		&pb.Vessel{Id: "vessel001", Name: "Kane's Salty Secret", MaxWeight: 200000, Capacity: 500},
+	}
+	repo := &VesselRepository{vessels}
 
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
