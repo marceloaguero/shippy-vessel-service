@@ -14,5 +14,5 @@ RUN apk --no-cache add ca-certificates
 RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /go/src/github.com/marceloaguero/shippy-vessel-service .
-
+EXPOSE 50052
 CMD ["./shippy-vessel-service"]
