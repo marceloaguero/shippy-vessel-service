@@ -47,6 +47,6 @@ func (repo *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.Vessel,
 }
 
 // Close closes the database session after each query
-func (repo *ConsignmentRepository) Close() {
+func (repo *VesselRepository) Close() {
 	repo.session.Close()
 }
