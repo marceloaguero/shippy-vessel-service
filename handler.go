@@ -24,7 +24,7 @@ func (s *service) GetRepo() Repository {
 	return &VesselRepository{s.session.Clone()}
 }
 
-func (s *service) Create(ctx context.Context, req *pb.Specification) (*pb.Response, error) {
+func (s *service) Create(ctx context.Context, req *pb.Vessel) (*pb.Response, error) {
 	repo := s.GetRepo()
 	defer repo.Close()
 
